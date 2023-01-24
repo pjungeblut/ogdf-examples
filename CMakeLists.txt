@@ -40,9 +40,17 @@ target_link_libraries(combinatorial_embedding ${LIB_OGDF_PATH})
 add_executable(dual source/dual.cpp)
 target_link_libraries(dual ${LIB_OGDF_PATH})
 
-# This uses SAT-solvers to find upward planar layouts.
+add_executable(stacked_triangulation source/stacked_triangulation.cpp)
+target_link_libraries(stacked_triangulation ${LIB_OGDF_PATH})
+
+add_executable(cubic_stellated source/cubic_stellated.cpp)
+target_link_libraries(cubic_stellated ${LIB_OGDF_PATH})
+
+
+
+# The OGFD methods for upward planarity use SAT solvers.
 # Therefore COIN (a library related and shipped with OGDF) needs to be linked
 # to the target as well. Moreover, COIN uses parallelism, so we have to link
 # the threads library, too.
-add_executable(upward source/upward.cpp)
-target_link_libraries(upward ${LIB_OGDF_PATH} ${LIB_COIN_PATH} Threads::Threads)
+# If needed, uncomment the following line.
+# target_link_libraries(upward ${LIB_OGDF_PATH} ${LIB_COIN_PATH} Threads::Threads)
