@@ -2,7 +2,7 @@
 
 Several small OGDF examples to showcase implementations of the graph drawing algorithms from the lecture.
 
-## Installation.
+## Installation
 Clone the OGDF repository into a directory called `ogdf`.
 Then build the library:
 ```
